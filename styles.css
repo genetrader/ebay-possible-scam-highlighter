@@ -6,6 +6,12 @@
   background-color: #ffe6e6 !important;
 }
 
+/* Basic styling for potential scam indicators */
+.potential-scam-indicator {
+  border: 2px solid yellow !important;
+  background-color: #fff9c4 !important;
+}
+
 /* Extension popup styling */
 #scam-remover-popup {
   padding: 10px;
@@ -15,4 +21,18 @@
 .scam-warning {
   color: red;
   font-weight: bold;
+}
+
+/* Scam label styling */
+.scam-label {
+  background-color: red;
+  color: white;
+  padding: 2px 4px;
+  font-weight: bold;
+  font-size: 12px;
+  margin-right: 5px;
+  border-radius: 3px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
