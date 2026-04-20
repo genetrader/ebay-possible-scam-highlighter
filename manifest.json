@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "eBay Scam Remover",
+  "version": "1.0.0",
+  "description": "An extension that helps identify and remove scam listings on eBay",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.ebay.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
