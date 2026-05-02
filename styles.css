@@ -1,15 +1,17 @@
 /* Styles for eBay Scam Remover extension */
 
-/* Basic styling for scam indicators */
-.scam-indicator {
-  border: 2px solid red !important;
-  background-color: #ffe6e6 !important;
+/* Basic styling for scam indicators - ENTIRE ROW COLORED */
+.s-card.scam-indicator, li.s-result-item.scam-indicator, .s-item.scam-indicator {
+  background-color: #ffcccc !important; /* Light red background for entire row */
+  outline: 3px solid #ff0000 !important;
+  position: relative !important;
 }
 
-/* Basic styling for potential scam indicators */
-.potential-scam-indicator {
-  border: 2px solid yellow !important;
-  background-color: #fff9c4 !important;
+/* Basic styling for potential scam indicators - ENTIRE ROW COLORED */
+.s-card.potential-scam-indicator, li.s-result-item.potential-scam-indicator, .s-item.potential-scam-indicator {
+  background-color: #fff9c4 !important; /* Light yellow background for entire row */
+  outline: 3px solid #ffaa00 !important;
+  position: relative !important;
 }
 
 /* Extension popup styling */
@@ -23,16 +25,30 @@
   font-weight: bold;
 }
 
-/* Scam label styling */
+/* Scam label styling - make it highly visible */
 .scam-label {
-  background-color: red;
+  background-color: #ff0000;
   color: white;
-  padding: 2px 4px;
+  padding: 4px 8px;
   font-weight: bold;
-  font-size: 12px;
-  margin-right: 5px;
-  border-radius: 3px;
+  font-size: 11px;
+  margin: 4px;
+  border-radius: 4px;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 8px;
+  left: 8px;
+  z-index: 10000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulse-scam 2s ease-in-out infinite;
+}
+
+.scam-label.potential-scam-label {
+  background-color: #ffaa00 !important;
+}
+
+@keyframes pulse-scam {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
