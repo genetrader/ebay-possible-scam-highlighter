@@ -94,6 +94,9 @@ function highlightScamListing(listing, reason) {
   
   // Add scam indicator class for red styling
   listing.classList.add('scam-indicator');
+  // Also set inline style to ensure row is highlighted
+  listing.style.setProperty('background-color', '#ffcccc', 'important');
+  listing.style.setProperty('outline', '3px solid #ff0000', 'important');
   console.log('Marked as SCAM:', reason);
 
   // Add a visible label badge
@@ -101,7 +104,7 @@ function highlightScamListing(listing, reason) {
   label.className = 'scam-label';
   label.textContent = '⚠️ SCAM - ' + reason;
   label.style.cssText = `
-    background-color: #ff0000;
+    background-color: #ff0000 !important;
     color: white;
     padding: 6px 10px;
     font-weight: bold;
@@ -128,6 +131,9 @@ function highlightPotentialScamListing(listing, reason) {
   
   // Add potential scam indicator class for yellow styling
   listing.classList.add('potential-scam-indicator');
+  // Also set inline style to ensure row is highlighted
+  listing.style.setProperty('background-color', '#fff9c4', 'important');
+  listing.style.setProperty('outline', '3px solid #ffaa00', 'important');
   console.log('Marked as POTENTIAL SCAM:', reason);
 
   // Add a visible label badge
@@ -135,7 +141,7 @@ function highlightPotentialScamListing(listing, reason) {
   label.className = 'scam-label potential-scam-label';
   label.textContent = '⚠️ CAUTION - ' + reason;
   label.style.cssText = `
-    background-color: #ffaa00;
+    background-color: #ffaa00 !important;
     color: white;
     padding: 6px 10px;
     font-weight: bold;
